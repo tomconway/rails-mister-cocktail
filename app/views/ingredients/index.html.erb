@@ -1,0 +1,12 @@
+<h1>Ingredients#index</h1>
+<div class="container">
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+    <div class="card">
+      <div class="card-body">
+        <%= ingredient.name %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

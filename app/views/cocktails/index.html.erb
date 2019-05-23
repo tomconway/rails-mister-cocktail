@@ -1,0 +1,15 @@
+<h1>Cocktails#index</h1>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail do %>
+        <div class="card">
+          <div class="card-body">
+            <%= cocktail.name %>
+          </div>
+      <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
