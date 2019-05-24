@@ -1,9 +1,17 @@
 <h1><%= @cocktail.name %></h1>
-
+<br>
+<%= @cocktail.instructions %>
+<br>
+<% if @cocktail.image_url %>
+  <%= image_tag @cocktail.image_url, width: '350px', height: '350px', class: 'mb-3'%>
+<% end %>
+<br>
 <% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> <%= dose.ingredient.name %></p>
+  <p><%= dose.description %> <%= dose.ingredient.name %>
+    <%= link_to 'Remove ingredient', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
 
 <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %>
+
 
 <%= link_to 'Back to list', cocktails_path %>

@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :cocktails, only: %i[index new show create] do
     resources :doses, only: %i[show create new]
   end
-  delete 'doses/:id', to: 'doses#destroy'
+  resources :doses, only: :destroy
 end
