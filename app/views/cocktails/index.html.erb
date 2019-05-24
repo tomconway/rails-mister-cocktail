@@ -1,11 +1,14 @@
-<h1>Cocktails#index</h1>
 <div class="container">
-  <div class="row">
+  <div class="card-columns">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail do %>
         <div class="card">
           <div class="card-body">
-            <%= cocktail.name %>
+             <% if cocktail.image_url %>
+              <%= image_tag cocktail.image_url, width: '280px', height: '280px', class: 'mb-3'%>
+             <% end %>
+             <br>
+            <%= cocktail.name  %>
           </div>
       <% end %>
         </div>
